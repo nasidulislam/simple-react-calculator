@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// component imports
-import Button from './components/Button/Button';
+// pages import
+import Simple from './pages/Simple/Simple';
+import Scientific from './pages/Scientific/Scientific';
 
 // contains global styles
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Button classList='first button' text='1' />
-    </div>
+    <div className="App"></div>
   );
 }
 
