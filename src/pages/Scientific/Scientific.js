@@ -7,6 +7,6 @@ import classList from '../../core/js/classList';
 
 export default function Scientific(props) {
     return (
-        <div className={classList(content.containerClass, props.classList)}></div>
+        <div className={classList(content.containerClass, props.classList)}>scientific</div>
     )
 }
