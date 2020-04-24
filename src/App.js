@@ -1,15 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+import content from './content';
 
-// component imports
-import Button from './components/Button/Button';
+// pages import
+import Simple from './pages/Simple/Simple';
+import Scientific from './pages/Scientific/Scientific';
+
+// component import
+import Nav from './components/Nav/Nav';
+
+// other imports
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import classList from  './core/js/classList';
 
 // contains global styles
 import './App.css';
 
 function App() {
+  const types = content.states.types;
+  const nav = content.nav;
+
+  // hooks
+  const [view, setView] = useState(types.simple);
   return (
-    <div className="App">
-      <Button classList='first button' text='1' />
+    <div className={content.containerClass}>
+      <Router>
+        <div className={classList(content.classList.navContainerClass)}>
+          <nav>
+            <ul>
+              {Object.keys(nav).map(idx => (
+                <Nav
+                  key={idx}
+                  index={idx}
+                  path={nav[idx].path}
+                  name={nav[idx].name}
+                />
+              ))}
+            </ul>
+          </nav>
+
+          <Switch>
+           <Route path='/scientific'>
+                <Scientific />
+           </Route>
+           <Route path='/'>
+                <Simple />
+           </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
