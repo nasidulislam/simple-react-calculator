@@ -22,7 +22,9 @@ function App(props) {
   // hooks
   const [view, setView] = useState(types.simple);
   function setCalcView(event) {
-    console.log(event.nativeEvent.target.target);
+    const pathname = (event.nativeEvent.path[0].pathname).replace(/\//g, '');
+    const currentView = pathname === '' ? types.simple : types.scientific;
+    setView(currentView);
   }
   return (
     <div className={content.containerClass}>
