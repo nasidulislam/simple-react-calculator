@@ -1,17 +1,16 @@
 import React from 'react';
-import './Calculator.scss';
+import './IconButton.scss';
 import content from './content';
-
-// component imports
-import Numpad from './Numpad';
 
 // other imports
 import classList from '../../core/js/classList';
 
-export default function Calculator(props) {
+export default function IconButton(props) {
     return (
         <div className={classList(content.containerClass, props.classList)}>
-            <Numpad />
+            <button onClick={props.clickHandler}>
+                <img src={props.icon} alt={props.alt}></img>
+            </button>
         </div>
     )
 }
