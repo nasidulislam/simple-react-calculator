@@ -13,19 +13,22 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import classList from  './core/js/classList';
 
 // contains global styles
-import './App.css';
+import './App.scss';
 
-function App() {
+function App(props) {
   const types = content.states.types;
   const nav = content.nav;
 
   // hooks
   const [view, setView] = useState(types.simple);
+  function setCalcView(event) {
+    console.log(event.nativeEvent.target.target);
+  }
   return (
     <div className={content.containerClass}>
       <Router>
-        <div className={classList(content.classList.navContainerClass)}>
-          <nav>
+        <div>
+          <nav className={classList(content.classList.navContainerClass)}>
             <ul>
               {Object.keys(nav).map(idx => (
                 <Nav
@@ -33,6 +36,7 @@ function App() {
                   index={idx}
                   path={nav[idx].path}
                   name={nav[idx].name}
+                  onClick={setCalcView}
                 />
               ))}
             </ul>
@@ -41,6 +45,9 @@ function App() {
           <Switch>
            <Route path='/scientific'>
                 <Scientific />
+           </Route>
+           <Route path='/simple'>
+            <Simple />
            </Route>
            <Route path='/'>
                 <Simple />
