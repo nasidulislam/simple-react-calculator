@@ -7,7 +7,6 @@ import Scientific from './pages/Scientific/Scientific';
 
 // component import
 import Nav from './components/Nav/Nav';
-import Option from './components/Option/Option';
 
 // other imports
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
