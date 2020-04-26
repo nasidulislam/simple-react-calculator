@@ -1,0 +1,10 @@
+@import 'src/core/css/variables.scss';
+
+$numbers-height: 70px;
+.icon-button-container button {
+    border: none;
+
+    img {
+        height: $numbers-height;
+    }
+}

@@ -1,17 +1,16 @@
 import React from 'react';
-import './Simple.scss';
+import './IconButton.scss';
 import content from './content';
-
-// component imports
-import Calculator from '../../components/Calculator/Calculator';
 
 // other imports
 import classList from '../../core/js/classList';
 
-export default function Simple(props) {
+export default function IconButton(props) {
     return (
         <div className={classList(content.containerClass, props.classList)}>
-            <Calculator />
+            <button onClick={props.clickHandler}>
+                <img src={props.icon} alt={props.alt}></img>
+            </button>
         </div>
     )
 }

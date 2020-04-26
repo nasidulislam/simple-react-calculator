@@ -1,7 +1,7 @@
 export default {
     containerClass: 'app-container',
     classList: {
-        navContainerClass: ''
+        navContainerClass: 'nav-container'
     },
     states: {
         types: {

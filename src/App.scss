@@ -1,0 +1,26 @@
+@import './core/css/reset.scss';
+@import './core/css/variables.scss';
+
+$nav-item-height: 40px;
+.app-container {
+    margin-top: 40px;
+
+    .nav-container ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            background-color: $brand-color;
+            height: $nav-item-height;
+            line-height: $nav-item-height;
+            text-align: center;
+            vertical-align: middle;
+            width: 100px;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}
