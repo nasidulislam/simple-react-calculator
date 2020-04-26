@@ -1,10 +1,12 @@
 @import 'src/core/css/variables.scss';
 
 .calculator-container {
-    margin: 60px auto 0 auto;
     padding: 10px;
-    max-width: 550px;
-    border: 1px solid red;
+
+    .buttons-container {
+        display: flex;
+        margin-top: 50px;
+    }
 
     .icon-button-container {
         min-width: 100px;
@@ -18,8 +20,6 @@
     }
 
     .numpad-container {
-        margin-top: 50px;
-
         .number-row {
             display: flex;
         }
