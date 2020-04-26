@@ -1,5 +1,4 @@
 import React from 'react';
-import './Calculator.scss';
 import content from './content';
 
 // component imports
@@ -22,9 +21,9 @@ export default function Numpad(props) {
     return (
         <div className={classList(content.numpad.containerClass, props.classList)}>
             <div className={content.numpad.numberRowClass}>
-                <IconButton icon={one}  />
-                <IconButton icon={two}  />
-                <IconButton icon={three}  />
+                <IconButton icon={seven}  />
+                <IconButton icon={eight}  />
+                <IconButton icon={nine}  />
             </div>
             <div className={content.numpad.numberRowClass}>
                 <IconButton icon={four}  />
@@ -32,9 +31,9 @@ export default function Numpad(props) {
                 <IconButton icon={six}  />
             </div>
             <div className={content.numpad.numberRowClass}>
-                <IconButton icon={seven}  />
-                <IconButton icon={eight}  />
-                <IconButton icon={nine}  />
+                <IconButton icon={one}  />
+                <IconButton icon={two}  />
+                <IconButton icon={three}  />
             </div>
         </div>
     )
