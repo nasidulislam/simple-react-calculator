@@ -16,6 +16,8 @@ import nine from '../../core/icons/numbers/007-nine.png';
 import zero from '../../core/icons/numbers/008-zero.png';
 import eight from '../../core/icons/numbers/009-eight.png';
 import seven from '../../core/icons/numbers/010-seven.png';
+import equal from '../../core/icons/numbers/equal.png';
+import decimal from '../../core/icons/numbers/decimal.png';
 
 export default function Numpad(props) {
     return (
@@ -34,6 +36,11 @@ export default function Numpad(props) {
                 <IconButton icon={one}  />
                 <IconButton icon={two}  />
                 <IconButton icon={three}  />
+            </div>
+            <div className={content.numpad.numberRowClass}>
+                <IconButton icon={zero}  />
+                <IconButton icon={decimal} classList={content.numpad.decimalIconButtonClass}  />
+                <IconButton icon={equal}  />
             </div>
         </div>
     )
