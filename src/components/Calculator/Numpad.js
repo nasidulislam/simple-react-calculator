@@ -18,10 +18,18 @@ import eight from '../../core/icons/numbers/009-eight.png';
 import seven from '../../core/icons/numbers/010-seven.png';
 import equal from '../../core/icons/numbers/equal.png';
 import decimal from '../../core/icons/numbers/decimal.png';
+import percentage from '../../core/icons/numbers/percentage.png';
+import square from '../../core/icons/numbers/square-root.png';
+import power from '../../core/icons/numbers/to-the-power.png';
 
 export default function Numpad(props) {
     return (
         <div className={classList(content.numpad.containerClass, props.classList)}>
+            <div className={content.numpad.numberRowClass}>
+                <IconButton icon={percentage}  />
+                <IconButton icon={square}  />
+                <IconButton icon={power}  />
+            </div>
             <div className={content.numpad.numberRowClass}>
                 <IconButton icon={seven}  />
                 <IconButton icon={eight}  />
