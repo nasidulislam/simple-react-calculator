@@ -15,12 +15,17 @@ import classList from  './core/js/classList';
 // contains global styles
 import './App.scss';
 
-function App(props) {
+function App() {
   const types = content.states.types;
   const nav = content.nav;
 
   // hooks
   const [view, setView] = useState(types.simple);
+  const [firstInput, handleFirstInput] = useState('');
+  const [secondInput, handleSecondInput] = useState('');
+  const [operator, handleOperator] = useState('');
+  const [result, handleResult] = useState('');
+
   function setCalcView(event) {
     const pathname = (event.nativeEvent.path[0].pathname).replace(/\//g, '');
     const currentView = pathname === '' ? types.simple : types.scientific;
@@ -28,7 +33,30 @@ function App(props) {
   }
 
   function handleClick(event) {
-    console.log(event.target.value);
+    const value = event.target.value;
+    const stringValue = value.toString();
+
+    if(!isNaN(value)) {
+      // its a number
+
+      if(operator === '') {
+        // if operator doesn't exist, then its first input
+        let _firstInput = firstInput.toString() + stringValue;
+        handleFirstInput(_firstInput);
+      } else {
+        // its the second input since operator exists
+        let _secondInput = secondInput.toString() + stringValue;
+        handleSecondInput(_secondInput);
+      }
+    } else if(value === '='){
+      // calculate result
+      console.log('result');
+    } else {
+      // clicked element is an operator
+      // stop grabbing further inputs as first input
+      // and start grabbing and appending as second input
+      handleOperator(value);
+    }
   }
   return (
     <div className={content.containerClass}>
