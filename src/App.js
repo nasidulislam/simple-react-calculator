@@ -11,6 +11,7 @@ import Nav from './components/Nav/Nav';
 // other imports
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import classList from  './core/js/classList';
+import math from  './core/js/math';
 
 // contains global styles
 import './App.scss';
@@ -32,12 +33,19 @@ function App() {
     setView(currentView);
   }
 
+  function clearAll() {
+    handleFirstInput('');
+    handleSecondInput('');
+    handleOperator('');
+    handleResult('');
+  }
+
   function handleClick(event) {
     const value = event.target.value;
     const stringValue = value.toString();
 
-    if(!isNaN(value)) {
-      // its a number
+    if(!isNaN(value) || value === '.') {
+      // its a number or decimal
 
       if(operator === '') {
         // if operator doesn't exist, then its first input
@@ -50,7 +58,12 @@ function App() {
       }
     } else if(value === '='){
       // calculate result
-      console.log('result');
+      // console.log(Number(firstInput));
+      // console.log(Number(secondInput));
+      const _result = math.handleMath(Number(firstInput), Number(secondInput), operator);
+      handleResult(_result);
+    } else if(value === 'clear') {
+      clearAll();
     } else {
       // clicked element is an operator
       // stop grabbing further inputs as first input
@@ -83,11 +96,19 @@ function App() {
            <Route path='/simple'>
             <Simple
               onClick={handleClick}
+              firstInput={firstInput}
+              secondInput={secondInput}
+              operator={operator}
+              result={result}
             />
            </Route>
            <Route path='/'>
                 <Simple
                   onClick={handleClick}
+                  firstInput={firstInput}
+                  secondInput={secondInput}
+                  operator={operator}
+                  result={result}
                 />
            </Route>
           </Switch>

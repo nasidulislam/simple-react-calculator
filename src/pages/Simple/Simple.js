@@ -11,7 +11,13 @@ import classList from '../../core/js/classList';
 export default function Simple(props) {
     return (
         <div className={classList(content.containerClass, props.classList)}>
-            <Calculator onClick={props.onClick} />
+            <Calculator
+                onClick={props.onClick}
+                firstInput={props.firstInput}
+                secondInput={props.secondInput}
+                operator={props.operator}
+                result={props.result}
+            />
         </div>
     )
 }

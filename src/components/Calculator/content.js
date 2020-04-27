@@ -7,7 +7,9 @@ export default {
         decimalIconButtonClass: 'decimal-icon-button'
     },
     display: {
-        containerClass: 'display-container'
+        containerClass: 'display-container',
+        primaryDisplayContainerClass: 'primary-display',
+        secondaryDisplayContainerClass: 'secondary-display'
     },
     operators: {
         containerClass: 'operators-container'
