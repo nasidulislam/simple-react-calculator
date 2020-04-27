@@ -58,8 +58,6 @@ function App() {
       }
     } else if(value === '='){
       // calculate result
-      // console.log(Number(firstInput));
-      // console.log(Number(secondInput));
       const _result = math.handleMath(Number(firstInput), Number(secondInput), operator);
       handleResult(_result);
     } else if(value === 'clear') {
