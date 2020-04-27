@@ -15,8 +15,8 @@ export default function Calculator(props) {
         <div className={classList(content.containerClass, props.classList)}>
             <Display />
             <div className={content.buttonsContainerClass}>
-                <Numpad />
-                <Operators />
+                <Numpad onClick={props.onClick} />
+                <Operators onClick={props.onClick} />
             </div>
         </div>
     )

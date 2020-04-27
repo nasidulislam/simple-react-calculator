@@ -26,6 +26,10 @@ function App(props) {
     const currentView = pathname === '' ? types.simple : types.scientific;
     setView(currentView);
   }
+
+  function handleClick(event) {
+    console.log(event.target.value);
+  }
   return (
     <div className={content.containerClass}>
       <Router>
@@ -49,10 +53,14 @@ function App(props) {
                 <Scientific />
            </Route>
            <Route path='/simple'>
-            <Simple />
+            <Simple
+              onClick={handleClick}
+            />
            </Route>
            <Route path='/'>
-                <Simple />
+                <Simple
+                  onClick={handleClick}
+                />
            </Route>
           </Switch>
         </div>
