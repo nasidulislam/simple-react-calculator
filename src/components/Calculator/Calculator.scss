@@ -1,5 +1,15 @@
 @import 'src/core/css/variables.scss';
 
+// primary display
+$primary-display-min-height: 50px;
+$primary-display-font-size: 40px;
+$primary-display-letter-spacing: 5px;
+
+// secondary display
+$secondary-display-font-size: 20px;
+$secondary-display-min-height: 35px;
+$secondary-display-letter-spacing: 3px;
+
 .calculator-container {
     padding: 10px;
 
@@ -40,6 +50,19 @@
 
     .display-container {
         font-family: 'Orbitron', sans-serif;
+        padding: 10px;
         text-align: right;
+
+        .primary-display {
+            font-size: $primary-display-font-size;
+            height: $primary-display-min-height;
+            letter-spacing: $primary-display-letter-spacing;
+        }
+
+        .secondary-display {
+            font-size: $secondary-display-font-size;
+            min-height: $secondary-display-min-height;
+            letter-spacing: $secondary-display-letter-spacing;
+        }
     }
 }
