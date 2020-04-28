@@ -8,7 +8,7 @@ import classList from '../../core/js/classList';
 export default function IconButton(props) {
     return (
         <div className={classList(content.containerClass, props.classList)}>
-            <button onClick={props.clickHandler}>
+            <button onClick={props.onClick} value={props.value}>
                 <img src={props.icon} alt={props.alt}></img>
             </button>
         </div>

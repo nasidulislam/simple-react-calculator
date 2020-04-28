@@ -26,29 +26,29 @@ export default function Numpad(props) {
     return (
         <div className={classList(content.numpad.containerClass, props.classList)}>
             <div className={content.numpad.numberRowClass}>
-                <IconButton icon={percentage}  />
-                <IconButton icon={square}  />
-                <IconButton icon={power}  />
+                <IconButton icon={percentage} onClick={props.onClick} value='%'  />
+                <IconButton icon={square} onClick={props.onClick} value='square' />
+                <IconButton icon={power} onClick={props.onClick} value='power' />
             </div>
             <div className={content.numpad.numberRowClass}>
-                <IconButton icon={seven}  />
-                <IconButton icon={eight}  />
-                <IconButton icon={nine}  />
+                <IconButton icon={seven} onClick={props.onClick} value='7'  />
+                <IconButton icon={eight} onClick={props.onClick} value='8'  />
+                <IconButton icon={nine} onClick={props.onClick} value='9' />
             </div>
             <div className={content.numpad.numberRowClass}>
-                <IconButton icon={four}  />
-                <IconButton icon={five}  />
-                <IconButton icon={six}  />
+                <IconButton icon={four} onClick={props.onClick} value='4'  />
+                <IconButton icon={five} onClick={props.onClick} value='5'  />
+                <IconButton icon={six} onClick={props.onClick} value='6'  />
             </div>
             <div className={content.numpad.numberRowClass}>
-                <IconButton icon={one}  />
-                <IconButton icon={two}  />
-                <IconButton icon={three}  />
+                <IconButton icon={one} onClick={props.onClick} value='1'  />
+                <IconButton icon={two} onClick={props.onClick} value='2'  />
+                <IconButton icon={three} onClick={props.onClick} value='3'  />
             </div>
             <div className={content.numpad.numberRowClass}>
-                <IconButton icon={zero}  />
-                <IconButton icon={decimal} classList={content.numpad.decimalIconButtonClass}  />
-                <IconButton icon={equal}  />
+                <IconButton icon={zero} onClick={props.onClick} value='0'  />
+                <IconButton icon={decimal} value='.' classList={content.numpad.decimalIconButtonClass} onClick={props.onClick}  />
+                <IconButton icon={equal} onClick={props.onClick} value='='  />
             </div>
         </div>
     )
