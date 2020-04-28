@@ -56,7 +56,7 @@ function App() {
         let _secondInput = secondInput.toString() + stringValue;
         handleSecondInput(_secondInput);
       }
-    } else if(value === '='){
+    } else if(value === '=') {
       // calculate result
       const _result = math.handleMath(Number(firstInput), Number(secondInput), operator);
       handleResult(_result);
@@ -64,6 +64,15 @@ function App() {
       clearAll();
     } else {
       // clicked element is an operator
+
+      if(firstInput !== '' && secondInput !== '') {
+        // user is chaining calculations
+        // calculate result, put that in as first input, clear second input
+        const _result = math.handleMath(Number(firstInput), Number(secondInput), operator);
+        handleResult(_result);
+        handleFirstInput(_result);
+        handleSecondInput('');
+      }
       // stop grabbing further inputs as first input
       // and start grabbing and appending as second input
       handleOperator(value);
